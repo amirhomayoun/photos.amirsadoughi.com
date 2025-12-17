@@ -1,0 +1,33 @@
+# Hugo
+/public/
+/resources/_gen/
+.hugo_build.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv/
+
+# Local photos (don't commit large image files)
+/static/photos/
+
+# Environment variables
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*

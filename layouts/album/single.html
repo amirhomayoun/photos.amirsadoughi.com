@@ -1,0 +1,78 @@
+{{ define "main" }}
+{{ $albumId := .File.BaseFileName }}
+{{ range .Site.Data.albums.albums }}
+    {{ if eq .id $albumId }}
+    <div class="album-header">
+        <div class="breadcrumb">
+            <a href="/">Albums</a> / {{ .title }}
+        </div>
+        <h1>{{ .title }}</h1>
+        {{ if .description }}
+            <p class="album-description">{{ .description }}</p>
+        {{ end }}
+        <div class="album-meta">
+            {{ if .date }}
+                <span class="meta-item">📅 {{ dateFormat "January 2, 2006" .date }}</span>
+            {{ end }}
+            {{ if .location }}
+                <span class="meta-item">📍 {{ .location }}</span>
+            {{ end }}
+            {{ if .photos }}
+                <span class="meta-item">📷 {{ len .photos }} photos</span>
+            {{ end }}
+        </div>
+        {{ if .tags }}
+            <div class="tags">
+                {{ range .tags }}
+                    <span class="tag">{{ . }}</span>
+                {{ end }}
+            </div>
+        {{ end }}
+    </div>
+
+    <div class="photo-grid">
+        {{ range .photos }}
+        <figure class="photo" data-pswp-width="{{ .width | default 1600 }}" data-pswp-height="{{ .height | default 1200 }}">
+            <a href="{{ .urls.original }}"
+               data-pswp-width="{{ .width | default 1600 }}"
+               data-pswp-height="{{ .height | default 1200 }}"
+               target="_blank">
+                <img src="{{ .urls.medium }}"
+                     alt="{{ .caption | default .filename }}"
+                     loading="lazy">
+            </a>
+            {{ if or .caption .exif }}
+            <figcaption>
+                {{ if .caption }}
+                    <p class="photo-caption">{{ .caption }}</p>
+                {{ end }}
+                {{ if .exif }}
+                    <div class="exif">
+                        {{ if .exif.camera }}
+                            <span>{{ .exif.camera }}</span>
+                        {{ end }}
+                        {{ if .exif.lens }}
+                            <span>{{ .exif.lens }}</span>
+                        {{ end }}
+                        {{ if and .exif.focal_length .exif.aperture .exif.shutter_speed .exif.iso }}
+                            <span class="exif-settings">
+                                {{ .exif.focal_length }} •
+                                f/{{ .exif.aperture }} •
+                                {{ .exif.shutter_speed }} •
+                                ISO {{ .exif.iso }}
+                            </span>
+                        {{ end }}
+                    </div>
+                {{ end }}
+            </figcaption>
+            {{ end }}
+        </figure>
+        {{ end }}
+    </div>
+
+    <div class="album-footer">
+        <a href="/" class="back-link">← Back to Albums</a>
+    </div>
+    {{ end }}
+{{ end }}
+{{ end }}

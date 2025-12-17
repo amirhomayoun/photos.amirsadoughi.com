@@ -1,0 +1,48 @@
+{{ define "main" }}
+<div class="hero">
+    <h1>Photography Portfolio</h1>
+    <p>A collection of moments captured through the lens</p>
+</div>
+
+<div class="albums-grid">
+    {{ if .Site.Data.albums.albums }}
+        {{ range .Site.Data.albums.albums }}
+        <div class="album-card">
+            <a href="/album/{{ .id }}/">
+                {{ if .photos }}
+                    {{ $coverPhoto := index .photos 0 }}
+                    {{ if $coverPhoto.urls.thumbnail }}
+                        <img src="{{ $coverPhoto.urls.thumbnail }}"
+                             alt="{{ .title }}"
+                             loading="lazy"
+                             class="album-cover">
+                    {{ end }}
+                {{ end }}
+                <div class="album-info">
+                    <h2>{{ .title }}</h2>
+                    {{ if .date }}
+                        <p class="album-meta">
+                            <span class="date">{{ dateFormat "January 2, 2006" .date }}</span>
+                            {{ if .photos }}
+                                <span class="count">{{ len .photos }} photos</span>
+                            {{ end }}
+                        </p>
+                    {{ end }}
+                    {{ if .description }}
+                        <p class="album-description">{{ .description }}</p>
+                    {{ end }}
+                    {{ if .location }}
+                        <p class="album-location">📍 {{ .location }}</p>
+                    {{ end }}
+                </div>
+            </a>
+        </div>
+        {{ end }}
+    {{ else }}
+        <div class="empty-state">
+            <h2>No albums yet</h2>
+            <p>Albums will appear here once you upload photos using the upload script.</p>
+        </div>
+    {{ end }}
+</div>
+{{ end }}

@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+<meta name="description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+
+<!-- PhotoSwipe CSS -->
+<link rel="stylesheet" href="https://unpkg.com/photoswipe@5.3.0/dist/photoswipe.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/css/style.css">
+
+<!-- PhotoSwipe JS -->
+<script src="https://unpkg.com/photoswipe@5.3.0/dist/umd/photoswipe.umd.min.js" defer></script>
+<script src="https://unpkg.com/photoswipe@5.3.0/dist/umd/photoswipe-lightbox.umd.min.js" defer></script>
+
+<!-- Initialize PhotoSwipe -->
+<script defer>
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof PhotoSwipeLightbox !== 'undefined') {
+        const lightbox = new PhotoSwipeLightbox({
+            gallery: '.photo-grid',
+            children: 'a',
+            pswpModule: PhotoSwipe,
+            padding: { top: 50, bottom: 50, left: 50, right: 50 },
+        });
+        lightbox.init();
+    }
+});
+</script>
