@@ -20,21 +20,38 @@ A Hugo-based photo blog with automated photo processing, EXIF extraction, and op
 # Hugo (already installed)
 hugo version  # Should be 0.123.0+
 
-# Python dependencies
-pip install -r requirements.txt
-
-# Optional: exiftool for EXIF extraction
-# macOS: brew install exiftool
-# Linux: sudo apt install libimage-exiftool-perl
+# Python 3
+python3 --version  # Should be 3.8+
 ```
 
-### 2. Check Setup
+### 2. Install Dependencies
+
+```bash
+# Recommended: Use virtual environment
+make setup
+
+# This creates a venv and installs dependencies
+# Or manually:
+# make venv      # Create virtual environment
+# make install   # Install dependencies
+```
+
+**Optional:** Install exiftool for EXIF extraction
+```bash
+# macOS
+brew install exiftool
+
+# Linux
+sudo apt install libimage-exiftool-perl
+```
+
+### 3. Check Setup
 
 ```bash
 make check
 ```
 
-### 3. Add Your First Album
+### 4. Add Your First Album
 
 ```bash
 # Create album directory
@@ -55,7 +72,7 @@ tags:
 EOF
 ```
 
-### 4. Process Photos
+### 5. Process Photos
 
 ```bash
 make process
@@ -68,7 +85,7 @@ This automatically:
 - Creates `content/album/` page files
 - Creates symlink `static/photos` → `~/Pictures/albums/`
 
-### 5. Preview
+### 6. Preview
 
 ```bash
 make serve

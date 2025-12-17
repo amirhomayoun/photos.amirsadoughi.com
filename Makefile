@@ -56,18 +56,43 @@ YELLOW := \033[0;33m
 BLUE := \033[0;34m
 NC := \033[0m # No Color
 
+# Virtual Environment
+venv:
+	@if [ -d $(VENV_DIR) ]; then \
+		echo "$(YELLOW)Virtual environment already exists at $(VENV_DIR)$(NC)"; \
+	else \
+		echo "$(BLUE)Creating Python virtual environment...$(NC)"; \
+		python3 -m venv $(VENV_DIR); \
+		echo "$(GREEN)✓ Virtual environment created$(NC)"; \
+		echo ""; \
+		echo "To activate manually:"; \
+		echo "  source $(VENV_DIR)/bin/activate"; \
+		echo ""; \
+		echo "Note: Makefile automatically uses venv when available"; \
+	fi
+
 # Installation
 install:
+	@if [ ! -d $(VENV_DIR) ]; then \
+		echo "$(YELLOW)No virtual environment found. Creating one...$(NC)"; \
+		$(MAKE) venv; \
+		echo ""; \
+	fi
 	@echo "$(BLUE)Installing Python dependencies...$(NC)"
 	$(PIP) install -r requirements.txt
 	@echo "$(GREEN)✓ Dependencies installed$(NC)"
+	@if [ -f $(VENV_PYTHON) ]; then \
+		echo "$(GREEN)✓ Using virtual environment: $(VENV_DIR)$(NC)"; \
+	else \
+		echo "$(YELLOW)⚠ Using system Python$(NC)"; \
+	fi
 	@echo ""
 	@echo "$(YELLOW)Optional: Install exiftool for EXIF data extraction:$(NC)"
 	@echo "  macOS:   brew install exiftool"
 	@echo "  Linux:   sudo apt install libimage-exiftool-perl"
 	@echo "  Check:   exiftool -ver"
 
-setup: install
+setup: venv install
 	@echo ""
 	@echo "$(BLUE)Setting up directories...$(NC)"
 	@mkdir -p $(PHOTOS_DIR)
@@ -93,6 +118,12 @@ setup: install
 # Dependency checking
 check:
 	@echo "$(BLUE)Checking dependencies...$(NC)"
+	@echo -n "Virtual env: "
+	@if [ -d $(VENV_DIR) ]; then \
+		echo "$(GREEN)✓ Active at $(VENV_DIR)$(NC)"; \
+	else \
+		echo "$(YELLOW)⚠ Not using venv (run: make venv)$(NC)"; \
+	fi
 	@echo -n "Hugo: "
 	@if command -v hugo >/dev/null 2>&1; then \
 		echo "$(GREEN)✓ $(shell hugo version | cut -d' ' -f1-2)$(NC)"; \
@@ -143,7 +174,7 @@ check:
 # Photo processing
 process:
 	@echo "$(BLUE)Processing all photos...$(NC)"
-	@./upload-photos.py
+	@$(PYTHON) upload-photos.py
 	@echo "$(GREEN)✓ Processing complete$(NC)"
 
 process-album:
@@ -153,7 +184,7 @@ process-album:
 		exit 1; \
 	fi
 	@echo "$(BLUE)Processing album: $(ALBUM)$(NC)"
-	@./upload-photos.py --album $(ALBUM)
+	@$(PYTHON) upload-photos.py --album $(ALBUM)
 	@echo "$(GREEN)✓ Album processed: $(ALBUM)$(NC)"
 
 # Development server
