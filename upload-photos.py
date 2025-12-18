@@ -406,16 +406,6 @@ def load_config() -> Dict[str, Any]:
         'jpeg_quality': int(os.getenv('JPEG_QUALITY', '85')),
     }
 
-    # Cloud storage settings (optional)
-    if config['use_cloud_storage']:
-        config.update({
-            's3_endpoint': os.getenv('S3_ENDPOINT'),
-            's3_access_key': os.getenv('S3_ACCESS_KEY'),
-            's3_secret_key': os.getenv('S3_SECRET_KEY'),
-            's3_bucket': os.getenv('S3_BUCKET', 'photos'),
-            'cdn_base_url': os.getenv('CDN_BASE_URL'),
-        })
-
     # Try to load .env file if it exists
     env_file = Path('.env')
     if env_file.exists():
@@ -436,6 +426,16 @@ def load_config() -> Dict[str, Any]:
                                 config['hugo_repo'] = value
                             elif key == 'USE_CLOUD_STORAGE':
                                 config['use_cloud_storage'] = value.lower() == 'true'
+
+    # Cloud storage settings (optional) - load AFTER .env file
+    if config['use_cloud_storage']:
+        config.update({
+            's3_endpoint': os.getenv('S3_ENDPOINT'),
+            's3_access_key': os.getenv('S3_ACCESS_KEY'),
+            's3_secret_key': os.getenv('S3_SECRET_KEY'),
+            's3_bucket': os.getenv('S3_BUCKET', 'photos'),
+            'cdn_base_url': os.getenv('CDN_BASE_URL'),
+        })
 
     return config
 
