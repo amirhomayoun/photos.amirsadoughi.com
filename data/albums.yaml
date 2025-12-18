@@ -1,0 +1,135 @@
+albums:
+- id: snowy-day-in-nyc
+  title: Snowy day in NYC
+  photos:
+  - id: '20251214_0012'
+    filename: 20251214_0012.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/snowy-day-in-nyc/original/20251214_0012.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/snowy-day-in-nyc/medium/20251214_0012.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/snowy-day-in-nyc/thumbnail/20251214_0012.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '3.5'
+      shutter_speed: 1/1250
+      iso: 100
+      date_taken: '2025-12-14T14:14:18Z'
+      width: 4023
+      height: 4621
+    width: 4023
+    height: 4621
+  - id: '20251214_0026'
+    filename: 20251214_0026.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/snowy-day-in-nyc/original/20251214_0026.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/snowy-day-in-nyc/medium/20251214_0026.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/snowy-day-in-nyc/thumbnail/20251214_0026.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '3.5'
+      shutter_speed: 1/1600
+      iso: 100
+      date_taken: '2025-12-14T14:31:14Z'
+      width: 6020
+      height: 4024
+    width: 6020
+    height: 4024
+  - id: '20251214_0030'
+    filename: 20251214_0030.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/snowy-day-in-nyc/original/20251214_0030.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/snowy-day-in-nyc/medium/20251214_0030.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/snowy-day-in-nyc/thumbnail/20251214_0030.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '5.0'
+      shutter_speed: 1/500
+      iso: 100
+      date_taken: '2025-12-14T14:34:59Z'
+      width: 5323
+      height: 3286
+    width: 5323
+    height: 3286
+  - id: '20251214_0041'
+    filename: 20251214_0041.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/snowy-day-in-nyc/original/20251214_0041.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/snowy-day-in-nyc/medium/20251214_0041.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/snowy-day-in-nyc/thumbnail/20251214_0041.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '4.0'
+      shutter_speed: 1/60
+      iso: 160
+      date_taken: '2025-12-14T16:02:18Z'
+      width: 4961
+      height: 4023
+    width: 4961
+    height: 4023
+  - id: '20251214_0043'
+    filename: 20251214_0043.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/snowy-day-in-nyc/original/20251214_0043.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/snowy-day-in-nyc/medium/20251214_0043.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/snowy-day-in-nyc/thumbnail/20251214_0043.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '4.5'
+      shutter_speed: 1/160
+      iso: 100
+      date_taken: '2025-12-14T16:15:18Z'
+      width: 3570
+      height: 3834
+    width: 3570
+    height: 3834
+  - id: '20251214_0049'
+    filename: 20251214_0049.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/snowy-day-in-nyc/original/20251214_0049.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/snowy-day-in-nyc/medium/20251214_0049.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/snowy-day-in-nyc/thumbnail/20251214_0049.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 17.0 mm
+      aperture: '4.0'
+      shutter_speed: 1/160
+      iso: 500
+      date_taken: '2025-12-14T16:13:00Z'
+      width: 6020
+      height: 4024
+    width: 6020
+    height: 4024
+  - id: '20251214_0054'
+    filename: 20251214_0054.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/snowy-day-in-nyc/original/20251214_0054.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/snowy-day-in-nyc/medium/20251214_0054.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/snowy-day-in-nyc/thumbnail/20251214_0054.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '4.0'
+      shutter_speed: 1/160
+      iso: 160
+      date_taken: '2025-12-14T16:19:18Z'
+      width: 2833
+      height: 4745
+    width: 2833
+    height: 4745
+  description: First snow of the season.
+  date: 2025-12-13
+  location: Central Park
+  tags:
+  - photography
