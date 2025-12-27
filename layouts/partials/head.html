@@ -23,6 +23,76 @@ document.addEventListener('DOMContentLoaded', function() {
             pswpModule: PhotoSwipe,
             padding: { top: 50, bottom: 50, left: 50, right: 50 },
         });
+
+        // Add captions with EXIF data
+        lightbox.on('uiRegister', function() {
+            lightbox.pswp.ui.registerElement({
+                name: 'custom-caption',
+                order: 9,
+                isButton: false,
+                appendTo: 'root',
+                html: '',
+                onInit: (el, pswp) => {
+                    el.classList.add('pswp__custom-caption');
+                    let manuallyHidden = false;
+
+                    // Add close button
+                    const closeBtn = document.createElement('button');
+                    closeBtn.className = 'caption-close';
+                    closeBtn.innerHTML = '×';
+                    closeBtn.title = 'Hide info';
+                    closeBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        el.classList.remove('visible');
+                        manuallyHidden = true; // Remember user closed it
+                    });
+
+                    const showCaption = () => {
+                        if (manuallyHidden) return; // Don't show if user manually closed it
+                        const content = el.querySelector('.caption-content');
+                        if (!content || !content.innerHTML) return;
+                        el.classList.add('visible');
+                    };
+
+                    lightbox.pswp.on('change', () => {
+                        const currSlideElement = lightbox.pswp.currSlide.data.element;
+                        let captionHTML = '';
+
+                        // Get caption from data attribute
+                        const caption = currSlideElement.getAttribute('data-caption');
+                        if (caption) {
+                            captionHTML = caption;
+                        }
+
+                        // Reset state first
+                        el.classList.remove('visible');
+                        manuallyHidden = false; // Reset on photo change
+
+                        if (captionHTML) {
+                            el.innerHTML = '<div class="caption-content">' + captionHTML + '</div>';
+                            el.appendChild(closeBtn);
+                            el.style.display = 'block';
+                            // Show after a tiny delay to ensure transition works
+                            setTimeout(() => showCaption(), 50);
+                        } else {
+                            el.innerHTML = '';
+                            el.style.display = 'none';
+                        }
+                    });
+
+                    // Show caption on mouse movement
+                    lightbox.pswp.on('pointerMove', showCaption);
+
+                    // Also bind to the root element for better detection
+                    const rootEl = lightbox.pswp.element;
+                    if (rootEl) {
+                        rootEl.addEventListener('mousemove', showCaption);
+                        rootEl.addEventListener('touchstart', showCaption);
+                    }
+                }
+            });
+        });
+
         lightbox.init();
     }
 });

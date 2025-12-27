@@ -44,6 +44,7 @@
     </div>
 
     <div class="photo-grid">
+        {{ $albumLocation := .location }}
         {{ range .photos }}
         {{ $width := .width | default 1600 }}
         {{ $height := .height | default 1200 }}
@@ -51,10 +52,25 @@
         {{ $maxGrow := 600.0 }}
         {{ $flexGrow := cond (gt $aspectRatio $maxGrow) $maxGrow $aspectRatio }}
         {{ $maxWidth := mul $flexGrow 1.5 }}
+        {{ $captionText := "" }}
+        {{ if $albumLocation }}
+            {{ $captionText = printf "📍 %s<br>" $albumLocation }}
+        {{ end }}
+        {{ if .exif }}
+            {{ if .exif.date_taken }}
+                {{ $captionText = printf "%s📅 %s<br>" $captionText (time .exif.date_taken | time.Format "January 2, 2006 at 3:04 PM") }}
+            {{ end }}
+            {{ if .exif.camera }}{{ $captionText = printf "%s📷 %s<br>" $captionText .exif.camera }}{{ end }}
+            {{ if .exif.lens }}{{ $captionText = printf "%s🔍 %s<br>" $captionText .exif.lens }}{{ end }}
+            {{ if and .exif.focal_length .exif.aperture .exif.shutter_speed .exif.iso }}
+                {{ $captionText = printf "%s⚙️ %s • f/%s • %s • ISO %v" $captionText .exif.focal_length .exif.aperture .exif.shutter_speed .exif.iso }}
+            {{ end }}
+        {{ end }}
         <figure class="photo" data-pswp-width="{{ $width }}" data-pswp-height="{{ $height }}" style="flex-grow: {{ $flexGrow }}; flex-basis: {{ $flexGrow }}px; max-width: {{ $maxWidth }}px;">
             <a href="{{ .urls.original }}"
                data-pswp-width="{{ $width }}"
                data-pswp-height="{{ $height }}"
+               data-caption="{{ $captionText }}"
                target="_blank">
                 <img src="{{ .urls.medium }}"
                      alt="{{ .caption | default .filename }}"
