@@ -48,7 +48,10 @@
         {{ $width := .width | default 1600 }}
         {{ $height := .height | default 1200 }}
         {{ $aspectRatio := div (mul (float $width) 300.0) (float $height) }}
-        <figure class="photo" data-pswp-width="{{ $width }}" data-pswp-height="{{ $height }}" style="flex-grow: {{ $aspectRatio }}; flex-basis: {{ $aspectRatio }}px;">
+        {{ $maxGrow := 600.0 }}
+        {{ $flexGrow := cond (gt $aspectRatio $maxGrow) $maxGrow $aspectRatio }}
+        {{ $maxWidth := mul $flexGrow 1.5 }}
+        <figure class="photo" data-pswp-width="{{ $width }}" data-pswp-height="{{ $height }}" style="flex-grow: {{ $flexGrow }}; flex-basis: {{ $flexGrow }}px; max-width: {{ $maxWidth }}px;">
             <a href="{{ .urls.original }}"
                data-pswp-width="{{ $width }}"
                data-pswp-height="{{ $height }}"
