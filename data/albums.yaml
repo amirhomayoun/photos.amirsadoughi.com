@@ -1,4 +1,426 @@
 albums:
+- id: playa-del-carmen
+  title: Playa del Carmen
+  photos:
+  - id: '20251222_0035'
+    filename: 20251222_0035.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/original/20251222_0035.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/medium/20251222_0035.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/thumbnail/20251222_0035.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '8.0'
+      shutter_speed: 1/60
+      iso: 200
+      date_taken: '2025-12-19T14:07:51Z'
+      width: 5908
+      height: 3853
+    width: 5908
+    height: 3853
+  - id: '20251222_0037'
+    filename: 20251222_0037.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/original/20251222_0037.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/medium/20251222_0037.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/thumbnail/20251222_0037.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '8.0'
+      shutter_speed: 1/60
+      iso: 125
+      date_taken: '2025-12-19T14:08:35Z'
+      width: 3843
+      height: 2524
+    width: 3843
+    height: 2524
+  - id: '20251222_0038'
+    filename: 20251222_0038.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/original/20251222_0038.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/medium/20251222_0038.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/thumbnail/20251222_0038.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '8.0'
+      shutter_speed: 1/60
+      iso: 100
+      date_taken: '2025-12-19T14:09:48Z'
+      width: 6010
+      height: 4011
+    width: 6010
+    height: 4011
+  - id: '20251222_0045'
+    filename: 20251222_0045.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/original/20251222_0045.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/medium/20251222_0045.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/thumbnail/20251222_0045.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '8.0'
+      shutter_speed: 1/60
+      iso: 320
+      date_taken: '2025-12-19T14:11:22Z'
+      width: 4024
+      height: 6020
+    width: 4024
+    height: 6020
+  - id: '20251222_0052'
+    filename: 20251222_0052.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/original/20251222_0052.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/medium/20251222_0052.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/thumbnail/20251222_0052.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '8.0'
+      shutter_speed: 1/500
+      iso: 100
+      date_taken: '2025-12-20T11:36:28Z'
+      width: 4472
+      height: 2592
+    width: 4472
+    height: 2592
+  - id: '20251222_0053'
+    filename: 20251222_0053.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/original/20251222_0053.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/medium/20251222_0053.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/thumbnail/20251222_0053.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '8.0'
+      shutter_speed: 1/800
+      iso: 100
+      date_taken: '2025-12-20T11:37:15Z'
+      width: 3594
+      height: 3101
+    width: 3594
+    height: 3101
+  - id: '20251222_0054'
+    filename: 20251222_0054.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/original/20251222_0054.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/medium/20251222_0054.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/thumbnail/20251222_0054.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '8.0'
+      shutter_speed: 1/1000
+      iso: 100
+      date_taken: '2025-12-20T11:37:50Z'
+      width: 3584
+      height: 5754
+    width: 3584
+    height: 5754
+  - id: '20251222_0055'
+    filename: 20251222_0055.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/original/20251222_0055.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/medium/20251222_0055.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/thumbnail/20251222_0055.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 50.0 mm
+      aperture: '8.0'
+      shutter_speed: 1/1000
+      iso: 100
+      date_taken: '2025-12-20T11:38:28Z'
+      width: 6020
+      height: 4024
+    width: 6020
+    height: 4024
+  - id: '20251222_0056'
+    filename: 20251222_0056.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/original/20251222_0056.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/medium/20251222_0056.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/thumbnail/20251222_0056.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '8.0'
+      shutter_speed: 1/1000
+      iso: 100
+      date_taken: '2025-12-20T11:39:19Z'
+      width: 2662
+      height: 3983
+    width: 2662
+    height: 3983
+  - id: '20251222_0057'
+    filename: 20251222_0057.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/original/20251222_0057.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/medium/20251222_0057.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/thumbnail/20251222_0057.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '8.0'
+      shutter_speed: 1/1600
+      iso: 100
+      date_taken: '2025-12-20T11:40:20Z'
+      width: 5046
+      height: 3267
+    width: 5046
+    height: 3267
+  - id: '20251222_0058'
+    filename: 20251222_0058.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/original/20251222_0058.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/medium/20251222_0058.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/thumbnail/20251222_0058.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '8.0'
+      shutter_speed: 1/640
+      iso: 100
+      date_taken: '2025-12-20T11:42:05Z'
+      width: 4663
+      height: 3116
+    width: 4663
+    height: 3116
+  - id: '20251222_0060'
+    filename: 20251222_0060.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/original/20251222_0060.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/medium/20251222_0060.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/thumbnail/20251222_0060.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 50.0 mm
+      aperture: '8.0'
+      shutter_speed: 1/320
+      iso: 100
+      date_taken: '2025-12-20T11:43:03Z'
+      width: 6020
+      height: 4024
+    width: 6020
+    height: 4024
+  - id: '20251222_0081'
+    filename: 20251222_0081.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/original/20251222_0081.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/medium/20251222_0081.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/thumbnail/20251222_0081.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '3.5'
+      shutter_speed: 1/40
+      iso: 3200
+      date_taken: '2025-12-20T23:14:11Z'
+      width: 3684
+      height: 5512
+    width: 3684
+    height: 5512
+  - id: '20251222_0088'
+    filename: 20251222_0088.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/original/20251222_0088.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/medium/20251222_0088.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/thumbnail/20251222_0088.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '4.5'
+      shutter_speed: 1/1600
+      iso: 100
+      date_taken: '2025-12-21T10:43:11Z'
+      width: 3526
+      height: 5276
+    width: 3526
+    height: 5276
+  - id: '20251222_0091'
+    filename: 20251222_0091.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/original/20251222_0091.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/medium/20251222_0091.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/thumbnail/20251222_0091.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '3.5'
+      shutter_speed: 1/2000
+      iso: 100
+      date_taken: '2025-12-21T11:26:15Z'
+      width: 6020
+      height: 4024
+    width: 6020
+    height: 4024
+  - id: '20251222_0092'
+    filename: 20251222_0092.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/original/20251222_0092.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/medium/20251222_0092.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/thumbnail/20251222_0092.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '9.0'
+      shutter_speed: 1/320
+      iso: 100
+      date_taken: '2025-12-21T11:28:02Z'
+      width: 5589
+      height: 3735
+    width: 5589
+    height: 3735
+  - id: '20251222_0099'
+    filename: 20251222_0099.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/original/20251222_0099.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/medium/20251222_0099.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/thumbnail/20251222_0099.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '3.5'
+      shutter_speed: 1/15
+      iso: 3200
+      date_taken: '2025-12-21T22:32:44Z'
+      width: 3950
+      height: 3939
+    width: 3950
+    height: 3939
+  - id: '20251222_0104'
+    filename: 20251222_0104.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/original/20251222_0104.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/medium/20251222_0104.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/thumbnail/20251222_0104.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 50.0 mm
+      aperture: '5.6'
+      shutter_speed: 1/10
+      iso: 3200
+      date_taken: '2025-12-21T22:37:57Z'
+      width: 4774
+      height: 4023
+    width: 4774
+    height: 4023
+  - id: '20251222_0108'
+    filename: 20251222_0108.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/original/20251222_0108.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/medium/20251222_0108.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/thumbnail/20251222_0108.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '3.5'
+      shutter_speed: 1/8
+      iso: 3200
+      date_taken: '2025-12-21T23:48:18Z'
+      width: 3498
+      height: 6019
+    width: 3498
+    height: 6019
+  - id: '20251222_0110'
+    filename: 20251222_0110.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/original/20251222_0110.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/medium/20251222_0110.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/thumbnail/20251222_0110.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '8.0'
+      shutter_speed: 1/160
+      iso: 100
+      date_taken: '2025-12-22T10:01:25Z'
+      width: 6020
+      height: 4024
+    width: 6020
+    height: 4024
+  - id: '20251222_0112'
+    filename: 20251222_0112.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/original/20251222_0112.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/medium/20251222_0112.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/thumbnail/20251222_0112.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '8.0'
+      shutter_speed: 1/500
+      iso: 100
+      date_taken: '2025-12-22T10:02:03Z'
+      width: 6020
+      height: 4024
+    width: 6020
+    height: 4024
+  - id: '20251222_0113'
+    filename: 20251222_0113.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/original/20251222_0113.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/medium/20251222_0113.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/thumbnail/20251222_0113.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '8.0'
+      shutter_speed: 1/800
+      iso: 100
+      date_taken: '2025-12-22T10:02:39Z'
+      width: 4525
+      height: 2979
+    width: 4525
+    height: 2979
+  - id: '20251222_0114'
+    filename: 20251222_0114.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/original/20251222_0114.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/medium/20251222_0114.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/playa-del-carmen/thumbnail/20251222_0114.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '8.0'
+      shutter_speed: 1/200
+      iso: 100
+      date_taken: '2025-12-22T10:03:05Z'
+      width: 5087
+      height: 3513
+    width: 5087
+    height: 3513
+  description: Beach, city, and more
+  date: 2025-12-20
+  location: Playa del Carmen, Mexico
+  tags:
+  - photography
 - id: snowy-day-in-nyc
   title: Snowy day in NYC
   photos:
