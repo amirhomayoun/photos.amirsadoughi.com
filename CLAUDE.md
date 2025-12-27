@@ -53,28 +53,44 @@ make check                            # Verify dependencies installed
 
 ### Smart Processing
 
-The script automatically detects which albums need processing:
+The script automatically detects which albums need processing and optimizes accordingly:
 
 **Smart detection checks:**
 - Do processed directories exist? (`original/`, `medium/`, `thumbnail/`)
 - Do photo counts match between source and processed?
 - Are the photo filenames identical?
 
-**Behavior:**
-- `make process` - Skips already-processed albums (fast, recommended)
-- `make process-all` - Forces reprocessing everything (use after config changes)
+**Behavior based on album state:**
+
+| Album State | `make process` Action | Re-uploads to R2? |
+|-------------|----------------------|-------------------|
+| New album (no processed photos) | Full processing | ✅ Yes |
+| Photos changed/added | Full processing | ✅ Yes |
+| Photos unchanged | Metadata update only | ❌ No |
+
+**Commands:**
+- `make process` - Smart mode (recommended for daily use)
+- `make process-all` - Force reprocess everything (use after config changes like image quality)
 - `make process-album ALBUM=name` - Always processes specified album (force mode)
 
-**Example workflow:**
+**Example workflows:**
+
 ```bash
 # Add new album
 mkdir ~/Pictures/albums/new-album
 cp photos/*.jpg ~/Pictures/albums/new-album/
-
-# Process (only new album is processed)
 make process
+# → New album: Full processing + upload
 
-# Existing albums are skipped automatically
+# Update metadata only (change title, add cover_photo, etc.)
+vim ~/Pictures/albums/existing-album/album.yaml
+make process
+# → Existing album: Metadata update only (no re-upload!)
+
+# Add more photos to existing album
+cp more/*.jpg ~/Pictures/albums/existing-album/
+make process
+# → Existing album: Full processing + upload (photos changed)
 ```
 
 ### Testing
@@ -99,6 +115,7 @@ description: "..."
 date: 2025-12-15
 location: "City, Country"
 tags: [tag1, tag2]
+cover_photo: "IMG_1234.jpg" # Filename to use as album cover (defaults to first photo alphabetically)
 ```
 
 **EXIF extraction**: Uses `exiftool` (optional) to extract camera, lens, focal length, aperture, shutter speed, ISO. Falls back gracefully if exiftool not installed.

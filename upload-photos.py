@@ -290,11 +290,56 @@ class PhotoUploader:
 
         return False  # All good, no processing needed
 
-    def process_album(self, album_dir: Path) -> Dict[str, Any]:
+    def read_processed_photos(self, album_dir: Path, album_id: str) -> List[Dict[str, Any]]:
+        """Read already-processed photos without re-processing"""
+        # Find all image files in root
+        image_extensions = {'.jpg', '.jpeg', '.JPG', '.JPEG', '.png', '.PNG'}
+        photo_paths = sorted([p for p in album_dir.iterdir()
+                             if p.is_file() and p.suffix in image_extensions])
+
+        if not photo_paths:
+            return []
+
+        photos = []
+        for photo_path in photo_paths:
+            photo_data = {
+                'id': photo_path.stem,
+                'filename': photo_path.name,
+                'urls': {}
+            }
+
+            # Generate URLs based on storage mode
+            sizes = ['original', 'medium', 'thumbnail']
+            for size_name in sizes:
+                if self.use_cloud_storage:
+                    s3_key = f"albums/{album_id}/{size_name}/{photo_path.name}"
+                    url = f"{self.cdn_base_url}/{s3_key}"
+                else:
+                    url = f"/photos/{album_dir.name}/{size_name}/{photo_path.name}"
+                photo_data['urls'][size_name] = url
+
+            # Read EXIF from SOURCE photo (not processed), to preserve all metadata
+            exif = self.extract_exif(photo_path)
+            if exif:
+                photo_data['exif'] = exif
+                if 'width' in exif:
+                    photo_data['width'] = exif['width']
+                if 'height' in exif:
+                    photo_data['height'] = exif['height']
+
+            photos.append(photo_data)
+
+        return photos
+
+    def process_album(self, album_dir: Path, metadata_only: bool = False) -> Dict[str, Any]:
         """Process all photos in an album"""
         album_dir_name = album_dir.name
         album_id = self.sanitize_album_id(album_dir_name)
-        print(f"\nProcessing album: {album_dir_name} (ID: {album_id})")
+
+        if metadata_only:
+            print(f"\n✓ Updating metadata for: {album_dir_name} (ID: {album_id})")
+        else:
+            print(f"\nProcessing album: {album_dir_name} (ID: {album_id})")
 
         # Find all image files (only in root of album dir, not in subdirectories)
         image_extensions = {'.jpg', '.jpeg', '.JPG', '.JPEG', '.png', '.PNG'}
@@ -308,20 +353,26 @@ class PhotoUploader:
         # Read metadata
         metadata = self.read_album_metadata(album_dir)
 
-        # Processed photos will be saved directly in album_dir subdirectories
-        # No temp directory needed - everything stays in ~/Pictures/albums/
+        # If metadata-only mode, read existing processed photos
+        if metadata_only:
+            photos = self.read_processed_photos(album_dir, album_id)
+            if not photos:
+                print(f"  Warning: No processed photos found, switching to full processing")
+                metadata_only = False
 
-        # Process each photo
-        photos = []
-        for photo_path in sorted(photo_paths):
-            try:
-                photo_data = self.process_photo(photo_path, album_id, album_dir)
-                photos.append(photo_data)
-            except Exception as e:
-                print(f"  Error processing {photo_path.name}: {e}")
+        # Full processing mode
+        if not metadata_only:
+            # Process each photo
+            photos = []
+            for photo_path in sorted(photo_paths):
+                try:
+                    photo_data = self.process_photo(photo_path, album_id, album_dir)
+                    photos.append(photo_data)
+                except Exception as e:
+                    print(f"  Error processing {photo_path.name}: {e}")
 
-        if not photos:
-            return None
+            if not photos:
+                return None
 
         # Build album data
         album = {
@@ -345,7 +396,10 @@ class PhotoUploader:
         if 'cover_photo' in metadata:
             album['cover_photo'] = metadata['cover_photo']
 
-        print(f"  Processed {len(photos)} photos")
+        if metadata_only:
+            print(f"  Updated metadata ({len(photos)} photos)")
+        else:
+            print(f"  Processed {len(photos)} photos")
         return album
 
     def generate_manifest(self, album_filter: Optional[str] = None, force: bool = False):
@@ -390,19 +444,20 @@ class PhotoUploader:
                 continue
 
             # Check if processing is needed (unless forced or filtering specific album)
-            if not force and not album_filter and not self.needs_processing(album_dir):
-                print(f"\n✓ Skipping {album_dir_name} (already processed)")
-                # Keep existing album data
-                if album_id in existing_albums:
-                    processed_albums[album_id] = existing_albums[album_id]
-                    skipped_count += 1
-                continue
+            needs_proc = self.needs_processing(album_dir)
 
-            # Process the album
-            album = self.process_album(album_dir)
-            if album:
-                processed_albums[album['id']] = album
-                processed_count += 1
+            if not force and not album_filter and not needs_proc:
+                # Photos unchanged - just update metadata
+                album = self.process_album(album_dir, metadata_only=True)
+                if album:
+                    processed_albums[album['id']] = album
+                    skipped_count += 1
+            else:
+                # Photos changed or forced - full processing
+                album = self.process_album(album_dir, metadata_only=False)
+                if album:
+                    processed_albums[album['id']] = album
+                    processed_count += 1
 
         if not processed_albums:
             print("\nNo albums found.")
@@ -421,7 +476,8 @@ class PhotoUploader:
             yaml.dump(manifest, f, sort_keys=False, allow_unicode=True, default_flow_style=False)
 
         print(f"\n✓ Manifest written to: {manifest_path}")
-        print(f"✓ Processed {processed_count} album(s), skipped {skipped_count} album(s)")
+        print(f"✓ Fully processed: {processed_count} album(s)")
+        print(f"✓ Metadata updated: {skipped_count} album(s) (photos unchanged)")
         print(f"✓ Total albums in manifest: {len(albums)}")
 
         # Create content files for each album

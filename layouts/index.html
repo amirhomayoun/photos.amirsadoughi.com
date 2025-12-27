@@ -11,6 +11,14 @@
             <a href="/album/{{ .id }}/">
                 {{ if .photos }}
                     {{ $coverPhoto := index .photos 0 }}
+                    {{ $coverPhotoFilename := .cover_photo }}
+                    {{ if $coverPhotoFilename }}
+                        {{ range .photos }}
+                            {{ if eq .filename $coverPhotoFilename }}
+                                {{ $coverPhoto = . }}
+                            {{ end }}
+                        {{ end }}
+                    {{ end }}
                     {{ if $coverPhoto.urls.thumbnail }}
                         <img src="{{ $coverPhoto.urls.thumbnail }}"
                              alt="{{ .title }}"
