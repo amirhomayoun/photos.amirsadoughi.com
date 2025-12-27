@@ -6,7 +6,20 @@
         <div class="breadcrumb">
             <a href="/">Albums</a> / {{ .title }}
         </div>
-        <h1>{{ .title }}</h1>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h1>{{ .title }}</h1>
+            <div class="view-switcher">
+                <button class="view-btn" data-view="justified" title="Justified Gallery">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="4" width="9" height="6"/><rect x="13" y="4" width="9" height="6"/><rect x="2" y="12" width="6" height="8"/><rect x="10" y="12" width="5" height="8"/><rect x="17" y="12" width="5" height="8"/></svg>
+                </button>
+                <button class="view-btn" data-view="masonry" title="Masonry">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="9" height="7"/><rect x="13" y="2" width="9" height="10"/><rect x="2" y="11" width="9" height="11"/><rect x="13" y="14" width="9" height="8"/></svg>
+                </button>
+                <button class="view-btn" data-view="grid" title="Grid">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="9" height="9"/><rect x="13" y="2" width="9" height="9"/><rect x="2" y="13" width="9" height="9"/><rect x="13" y="13" width="9" height="9"/></svg>
+                </button>
+            </div>
+        </div>
         {{ if .description }}
             <p class="album-description">{{ .description }}</p>
         {{ end }}
@@ -32,10 +45,13 @@
 
     <div class="photo-grid">
         {{ range .photos }}
-        <figure class="photo" data-pswp-width="{{ .width | default 1600 }}" data-pswp-height="{{ .height | default 1200 }}">
+        {{ $width := .width | default 1600 }}
+        {{ $height := .height | default 1200 }}
+        {{ $aspectRatio := div (mul (float $width) 300.0) (float $height) }}
+        <figure class="photo" data-pswp-width="{{ $width }}" data-pswp-height="{{ $height }}" style="flex-grow: {{ $aspectRatio }}; flex-basis: {{ $aspectRatio }}px;">
             <a href="{{ .urls.original }}"
-               data-pswp-width="{{ .width | default 1600 }}"
-               data-pswp-height="{{ .height | default 1200 }}"
+               data-pswp-width="{{ $width }}"
+               data-pswp-height="{{ $height }}"
                target="_blank">
                 <img src="{{ .urls.medium }}"
                      alt="{{ .caption | default .filename }}"
