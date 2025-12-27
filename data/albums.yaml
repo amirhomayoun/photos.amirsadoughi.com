@@ -421,6 +421,7 @@ albums:
   location: Playa del Carmen, Mexico
   tags:
   - photography
+  cover_photo: 20251222_0088.jpg
 - id: snowy-day-in-nyc
   title: Snowy day in NYC
   photos:
@@ -555,3 +556,4 @@ albums:
   location: Central Park
   tags:
   - photography
+  cover_photo: 20251214_0012.jpg
