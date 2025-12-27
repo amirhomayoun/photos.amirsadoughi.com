@@ -1,4 +1,4 @@
-.PHONY: help venv install setup process serve build clean deploy git-init check test
+.PHONY: help venv install setup process process-all serve build clean deploy git-init check test
 
 # Default target
 help:
@@ -12,7 +12,8 @@ help:
 	@echo "  make check          - Check all dependencies are installed"
 	@echo ""
 	@echo "Development:"
-	@echo "  make process        - Process all photos and generate manifest"
+	@echo "  make process        - Smart process (only new/changed albums)"
+	@echo "  make process-all    - Force reprocess all albums"
 	@echo "  make process-album  - Process single album (usage: make process-album ALBUM=album-name)"
 	@echo "  make serve          - Start Hugo dev server (with drafts)"
 	@echo "  make serve-prod     - Start Hugo server in production mode"
@@ -173,8 +174,13 @@ check:
 
 # Photo processing
 process:
-	@echo "$(BLUE)Processing all photos...$(NC)"
+	@echo "$(BLUE)Smart processing photos (skip already processed)...$(NC)"
 	@$(PYTHON) upload-photos.py
+	@echo "$(GREEN)✓ Processing complete$(NC)"
+
+process-all:
+	@echo "$(BLUE)Force processing all photos...$(NC)"
+	@$(PYTHON) upload-photos.py --force
 	@echo "$(GREEN)✓ Processing complete$(NC)"
 
 process-album:

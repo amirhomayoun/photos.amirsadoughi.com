@@ -36,7 +36,8 @@ This is a Hugo-based photo blog with automated photo processing. Photos live out
 
 ### Development Workflow
 ```bash
-make process          # Process all photos, generate manifest
+make process          # Smart process (only new/changed albums)
+make process-all      # Force reprocess all albums
 make serve            # Start Hugo dev server (with drafts)
 make dev              # Process + serve (combined workflow)
 make clean            # Remove Hugo build artifacts
@@ -48,6 +49,32 @@ make build            # Build for production
 make process-album ALBUM=album-name   # Process single album only
 make git-status                       # Show albums and photo counts
 make check                            # Verify dependencies installed
+```
+
+### Smart Processing
+
+The script automatically detects which albums need processing:
+
+**Smart detection checks:**
+- Do processed directories exist? (`original/`, `medium/`, `thumbnail/`)
+- Do photo counts match between source and processed?
+- Are the photo filenames identical?
+
+**Behavior:**
+- `make process` - Skips already-processed albums (fast, recommended)
+- `make process-all` - Forces reprocessing everything (use after config changes)
+- `make process-album ALBUM=name` - Always processes specified album (force mode)
+
+**Example workflow:**
+```bash
+# Add new album
+mkdir ~/Pictures/albums/new-album
+cp photos/*.jpg ~/Pictures/albums/new-album/
+
+# Process (only new album is processed)
+make process
+
+# Existing albums are skipped automatically
 ```
 
 ### Testing

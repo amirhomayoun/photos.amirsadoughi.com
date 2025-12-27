@@ -255,6 +255,41 @@ class PhotoUploader:
         slug = slug.strip('-')                # Remove leading/trailing hyphens
         return slug
 
+    def needs_processing(self, album_dir: Path) -> bool:
+        """Check if album needs processing (new photos or missing processed versions)"""
+        # Find source photos
+        image_extensions = {'.jpg', '.jpeg', '.JPG', '.JPEG', '.png', '.PNG'}
+        source_photos = [p for p in album_dir.iterdir()
+                        if p.is_file() and p.suffix in image_extensions]
+
+        if not source_photos:
+            return False
+
+        # Check if processed directories exist
+        original_dir = album_dir / 'original'
+        medium_dir = album_dir / 'medium'
+        thumbnail_dir = album_dir / 'thumbnail'
+
+        if not (original_dir.exists() and medium_dir.exists() and thumbnail_dir.exists()):
+            return True  # Missing processed directories
+
+        # Check if photo counts match
+        processed_photos = list(original_dir.glob('*.[jJ][pP][gG]')) + \
+                          list(original_dir.glob('*.[jJ][pP][eE][gG]')) + \
+                          list(original_dir.glob('*.[pP][nN][gG]'))
+
+        if len(source_photos) != len(processed_photos):
+            return True  # Photo count mismatch
+
+        # Check if all source photos have processed versions
+        source_names = {p.name for p in source_photos}
+        processed_names = {p.name for p in processed_photos}
+
+        if source_names != processed_names:
+            return True  # Different photo sets
+
+        return False  # All good, no processing needed
+
     def process_album(self, album_dir: Path) -> Dict[str, Any]:
         """Process all photos in an album"""
         album_dir_name = album_dir.name
@@ -313,7 +348,7 @@ class PhotoUploader:
         print(f"  Processed {len(photos)} photos")
         return album
 
-    def generate_manifest(self, album_filter: Optional[str] = None):
+    def generate_manifest(self, album_filter: Optional[str] = None, force: bool = False):
         """Generate albums.yaml manifest"""
         print(f"Scanning photos directory: {self.photos_dir}")
 
@@ -321,37 +356,73 @@ class PhotoUploader:
             print(f"Error: Photos directory does not exist: {self.photos_dir}")
             return
 
-        albums = []
+        # Load existing manifest if it exists
+        manifest_path = self.hugo_repo / 'data' / 'albums.yaml'
+        existing_albums = {}
+        if manifest_path.exists() and not album_filter:
+            try:
+                with open(manifest_path, 'r') as f:
+                    existing_data = yaml.safe_load(f)
+                    if existing_data and 'albums' in existing_data:
+                        # Index by album ID for easy lookup
+                        existing_albums = {a['id']: a for a in existing_data['albums']}
+                        print(f"Loaded {len(existing_albums)} existing albums from manifest")
+            except Exception as e:
+                print(f"Warning: Could not load existing manifest: {e}")
+
+        processed_albums = {}
+        processed_count = 0
+        skipped_count = 0
 
         # Process each album directory
         for album_dir in sorted(self.photos_dir.iterdir()):
             if not album_dir.is_dir():
                 continue
 
+            album_dir_name = album_dir.name
+            album_id = self.sanitize_album_id(album_dir_name)
+
             # Skip if filtering by album
             if album_filter and album_dir.name != album_filter:
+                # Keep existing album data if not filtering on it
+                if album_id in existing_albums:
+                    processed_albums[album_id] = existing_albums[album_id]
                 continue
 
+            # Check if processing is needed (unless forced or filtering specific album)
+            if not force and not album_filter and not self.needs_processing(album_dir):
+                print(f"\n✓ Skipping {album_dir_name} (already processed)")
+                # Keep existing album data
+                if album_id in existing_albums:
+                    processed_albums[album_id] = existing_albums[album_id]
+                    skipped_count += 1
+                continue
+
+            # Process the album
             album = self.process_album(album_dir)
             if album:
-                albums.append(album)
+                processed_albums[album['id']] = album
+                processed_count += 1
 
-        if not albums:
-            print("\nNo albums found to process.")
+        if not processed_albums:
+            print("\nNo albums found.")
             return
+
+        # Convert back to list
+        albums = list(processed_albums.values())
 
         # Generate manifest
         manifest = {'albums': albums}
 
         # Write YAML file
-        manifest_path = self.hugo_repo / 'data' / 'albums.yaml'
         manifest_path.parent.mkdir(exist_ok=True)
 
         with open(manifest_path, 'w') as f:
             yaml.dump(manifest, f, sort_keys=False, allow_unicode=True, default_flow_style=False)
 
         print(f"\n✓ Manifest written to: {manifest_path}")
-        print(f"✓ Processed {len(albums)} albums")
+        print(f"✓ Processed {processed_count} album(s), skipped {skipped_count} album(s)")
+        print(f"✓ Total albums in manifest: {len(albums)}")
 
         # Create content files for each album
         print(f"\nCreating content files...")
@@ -443,6 +514,7 @@ def load_config() -> Dict[str, Any]:
 def main():
     parser = argparse.ArgumentParser(description='Process photos and generate Hugo manifest')
     parser.add_argument('--album', help='Process only specific album')
+    parser.add_argument('--force', action='store_true', help='Force reprocess all albums (skip smart detection)')
     parser.add_argument('--dry-run', action='store_true', help='Show what would be done without doing it')
     args = parser.parse_args()
 
@@ -454,6 +526,12 @@ def main():
     print(f"Photos directory: {config['photos_dir']}")
     print(f"Hugo repository: {config['hugo_repo']}")
     print(f"Cloud storage: {'Enabled' if config['use_cloud_storage'] else 'Disabled (using local storage)'}")
+    if args.force:
+        print(f"Mode: FORCE (reprocess all albums)")
+    elif args.album:
+        print(f"Mode: Single album ({args.album})")
+    else:
+        print(f"Mode: Smart (skip already processed albums)")
     print("=" * 50)
 
     if args.dry_run:
@@ -462,7 +540,7 @@ def main():
 
     # Create uploader and generate manifest
     uploader = PhotoUploader(config)
-    uploader.generate_manifest(album_filter=args.album)
+    uploader.generate_manifest(album_filter=args.album, force=args.force)
 
     print("\n✓ Done! You can now preview with: hugo server")
 
