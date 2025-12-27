@@ -293,8 +293,11 @@ header {
 
 .photo {
     flex-grow: 1;
-    height: 300px;
     min-width: 200px;
+}
+
+.photo a {
+    height: 300px;
 }
 
 /* Masonry Layout */
@@ -330,8 +333,11 @@ header {
 }
 
 .photo-grid.view-grid .photo {
-    height: 350px;
     flex-grow: 0;
+}
+
+.photo-grid.view-grid .photo a {
+    height: 350px;
 }
 
 .photo-grid.view-grid .photo img {
@@ -460,8 +466,11 @@ footer {
     }
 
     .photo {
-        height: 200px;
         min-width: 150px;
+    }
+
+    .photo a {
+        height: 200px;
     }
 
     .photo-grid.view-masonry {
