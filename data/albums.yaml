@@ -1,4 +1,301 @@
 albums:
+- id: dia-beacon
+  title: Dia Beacon
+  photos:
+  - id: '20251226_0004'
+    filename: 20251226_0004.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/original/20251226_0004.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/medium/20251226_0004.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/thumbnail/20251226_0004.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '8.0'
+      shutter_speed: 1/25
+      iso: 800
+      date_taken: '2025-12-26T13:53:11Z'
+      width: 5094
+      height: 2401
+    width: 5094
+    height: 2401
+  - id: '20251226_0007'
+    filename: 20251226_0007.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/original/20251226_0007.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/medium/20251226_0007.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/thumbnail/20251226_0007.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '3.5'
+      shutter_speed: 1/60
+      iso: 320
+      date_taken: '2025-12-26T13:54:02Z'
+      width: 5591
+      height: 3043
+    width: 5591
+    height: 3043
+  - id: '20251226_0012'
+    filename: 20251226_0012.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/original/20251226_0012.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/medium/20251226_0012.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/thumbnail/20251226_0012.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '3.5'
+      shutter_speed: 1/30
+      iso: 800
+      date_taken: '2025-12-26T14:02:35Z'
+      width: 3370
+      height: 5996
+    width: 3370
+    height: 5996
+  - id: '20251226_0017'
+    filename: 20251226_0017.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/original/20251226_0017.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/medium/20251226_0017.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/thumbnail/20251226_0017.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '3.5'
+      shutter_speed: 1/60
+      iso: 250
+      date_taken: '2025-12-26T14:08:40Z'
+      width: 1898
+      height: 2749
+    width: 1898
+    height: 2749
+  - id: '20251226_0018'
+    filename: 20251226_0018.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/original/20251226_0018.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/medium/20251226_0018.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/thumbnail/20251226_0018.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 27.0 mm
+      aperture: '4.5'
+      shutter_speed: 1/60
+      iso: 500
+      date_taken: '2025-12-26T14:09:02Z'
+      width: 5194
+      height: 2594
+    width: 5194
+    height: 2594
+  - id: '20251226_0019'
+    filename: 20251226_0019.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/original/20251226_0019.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/medium/20251226_0019.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/thumbnail/20251226_0019.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 30.0 mm
+      aperture: '5.0'
+      shutter_speed: 1/60
+      iso: 500
+      date_taken: '2025-12-26T14:09:43Z'
+      width: 6019
+      height: 3437
+    width: 6019
+    height: 3437
+  - id: '20251226_0023'
+    filename: 20251226_0023.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/original/20251226_0023.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/medium/20251226_0023.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/thumbnail/20251226_0023.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '3.5'
+      shutter_speed: 1/30
+      iso: 800
+      date_taken: '2025-12-26T14:15:30Z'
+      width: 6019
+      height: 2757
+    width: 6019
+    height: 2757
+  - id: '20251226_0027'
+    filename: 20251226_0027.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/original/20251226_0027.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/medium/20251226_0027.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/thumbnail/20251226_0027.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '3.5'
+      shutter_speed: 1/100
+      iso: 100
+      date_taken: '2025-12-26T14:21:43Z'
+      width: 2955
+      height: 4138
+    width: 2955
+    height: 4138
+  - id: '20251226_0028'
+    filename: 20251226_0028.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/original/20251226_0028.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/medium/20251226_0028.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/thumbnail/20251226_0028.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '3.5'
+      shutter_speed: 1/50
+      iso: 800
+      date_taken: '2025-12-26T14:23:10Z'
+      width: 5417
+      height: 2851
+    width: 5417
+    height: 2851
+  - id: '20251226_0029'
+    filename: 20251226_0029.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/original/20251226_0029.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/medium/20251226_0029.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/thumbnail/20251226_0029.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 35.0 mm
+      aperture: '5.0'
+      shutter_speed: 1/50
+      iso: 800
+      date_taken: '2025-12-26T14:23:51Z'
+      width: 4980
+      height: 3344
+    width: 4980
+    height: 3344
+  - id: '20251226_0031'
+    filename: 20251226_0031.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/original/20251226_0031.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/medium/20251226_0031.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/thumbnail/20251226_0031.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '3.5'
+      shutter_speed: 1/50
+      iso: 800
+      date_taken: '2025-12-26T14:28:35Z'
+      width: 3229
+      height: 5686
+    width: 3229
+    height: 5686
+  - id: '20251226_0032'
+    filename: 20251226_0032.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/original/20251226_0032.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/medium/20251226_0032.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/thumbnail/20251226_0032.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '4.0'
+      shutter_speed: 1/50
+      iso: 500
+      date_taken: '2025-12-26T14:30:08Z'
+      width: 3466
+      height: 4903
+    width: 3466
+    height: 4903
+  - id: '20251226_0034'
+    filename: 20251226_0034.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/original/20251226_0034.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/medium/20251226_0034.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/thumbnail/20251226_0034.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '3.5'
+      shutter_speed: 1/50
+      iso: 800
+      date_taken: '2025-12-26T14:32:26Z'
+      width: 5728
+      height: 3531
+    width: 5728
+    height: 3531
+  - id: '20251226_0052'
+    filename: 20251226_0052.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/original/20251226_0052.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/medium/20251226_0052.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/thumbnail/20251226_0052.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '3.5'
+      shutter_speed: 1.6
+      iso: 800
+      date_taken: '2025-12-26T14:43:06Z'
+      width: 4023
+      height: 5864
+    width: 4023
+    height: 5864
+  - id: '20251226_0062'
+    filename: 20251226_0062.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/original/20251226_0062.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/medium/20251226_0062.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/thumbnail/20251226_0062.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '4.0'
+      shutter_speed: 1/60
+      iso: 100
+      date_taken: '2025-12-26T15:21:27Z'
+      width: 5572
+      height: 4023
+    width: 5572
+    height: 4023
+  - id: '20251226_0063'
+    filename: 20251226_0063.jpg
+    urls:
+      original: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/original/20251226_0063.jpg
+      medium: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/medium/20251226_0063.jpg
+      thumbnail: https://photos-cdn.amirsadoughi.com/albums/dia-beacon/thumbnail/20251226_0063.jpg
+    exif:
+      camera: SONY ILCE-6000
+      lens: E PZ 16-50mm F3.5-5.6 OSS
+      focal_length: 16.0 mm
+      aperture: '4.5'
+      shutter_speed: 1/80
+      iso: 100
+      date_taken: '2025-12-26T15:22:08Z'
+      width: 5769
+      height: 3612
+    width: 5769
+    height: 3612
+  description: Art museum
+  date: 2025-12-26
+  location: Beacon, NY
+  tags:
+  - photography
+  cover_photo: 20251226_0004.jpg
 - id: playa-del-carmen
   title: Playa del Carmen
   photos:
